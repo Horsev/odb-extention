@@ -1,4 +1,4 @@
-# Opendatabot Google chrome extention
+# Opendatabot Google Chrome extention
 
 =======
 
