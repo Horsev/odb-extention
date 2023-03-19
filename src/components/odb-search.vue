@@ -1,26 +1,26 @@
 <template lang="pug">
-.container-md.p-3
-  form.px-4.px-md-5
-    .position-relative
-      .position-absolute.top-50.start-0.translate-middle.ps-5
-        img(src="/favicon-32x32.png" alt="Опендатабот")
-      input.form-control.form-control-lg.ps-5(
-        placeholder='Код компанії' 
-        type='text' 
-        aria-label='Search' 
-        v-model='text'
-        :class='{shake: isError}'
-        list="suggests"
-        )
+form.px-4.px-md-5
+  .position-relative
+    .position-absolute.top-50.start-0.translate-middle.ps-5
+      img(src="/favicon-96x96.png" alt="Опендатабот")
+    input.form-control.form-control-lg.ps-5(
+      placeholder='Код компанії' 
+      type='text' 
+      aria-label='Search' 
+      v-model='text'
+      :class='{shake: isError}'
+      list="suggests"
+      )
 
-      datalist#suggests(v-if='suggests.length')
-        option(:value='suggest' v-for='suggest in suggests')
+    datalist#suggests(v-if='suggests.length')
+      option(:value='suggest' v-for='suggest in suggests')
 
 </template>
 
 <script>
 
 import { validateCompanyCode } from "../js/utils";
+
 
 export default {
   props: {
@@ -43,7 +43,6 @@ export default {
       }
       else {
         this.$emit('search', val);
-        window.open(`https://opendatabot.ua/c/${val}?from=extention`, "_self")
       }
     }
   },
@@ -53,8 +52,8 @@ export default {
 
 <style scoped lang="sass">
 img
-  width: 16px
-  height: 16px
+  width: 24px
+  height: 24px
 .shake
   animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both
   transform: translate3d(0, 0, 0)
